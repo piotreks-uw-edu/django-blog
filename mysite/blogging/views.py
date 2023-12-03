@@ -9,11 +9,6 @@ class PostListView(ListView):
         .order_by('-published_date')
 
 
-def detail_view(request, post_id):
-    published = Post.objects.exclude(published_date__exact=None)
-    try:
-        post = published.get(pk=post_id)
-    except Post.DoesNotExist:
-        raise Http404
-    context = {'post': post}
-    return render(request, 'blogging/detail.html', context)
+class PostDetailView(DetailView):
+    template_name = 'blogging/detail.html'
+    queryset = Post.objects.exclude(published_date__exact=None)
