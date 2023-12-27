@@ -8,6 +8,8 @@ WORKDIR /data/mysite
 COPY mysite/requirements.txt .
 
 # Upgrade pip and setuptools, install requirements, and clean up in one layer
-RUN pip install --upgrade pip setuptools && \
+RUN apt-get update && \
+    apt-get install sqlite3 && \
+    pip install --upgrade pip setuptools && \
     pip install --no-cache-dir -r requirements.txt && \
     rm requirements.txt
