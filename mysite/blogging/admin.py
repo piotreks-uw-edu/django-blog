@@ -10,12 +10,14 @@ class CategoryInline(admin.TabularInline):
 
 class PostAdmin(admin.ModelAdmin):
     "List, search fileds etc"
-    inlines = [CategoryInline,]
+    inlines = [
+        CategoryInline,
+    ]
 
 
 class CategoryAdmin(admin.ModelAdmin):
     "Exclude the posts fiels"
-    exclude = ('posts',)
+    exclude = ("posts",)
 
 
 admin.site.register(Post)
