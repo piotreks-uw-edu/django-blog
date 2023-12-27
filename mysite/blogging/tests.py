@@ -7,7 +7,7 @@ from django.utils.timezone import utc
 
 
 class FrontEndTestCase(TestCase):
-    """test views in the front-end"""
+    """test views provided in the front-end"""
 
     fixtures = [
         "blogging_test_fixture.json",

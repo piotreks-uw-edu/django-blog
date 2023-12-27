@@ -1,9 +1,9 @@
 language: python
 python:
-  - "3.6"
+  - "3.9"
 install:
-  - pip install -r requirements.txt
-  - python manage.py migrate
+  - pip install -r mysite/requirements.txt
+  - python mysite/manage.py migrate
 script:
-  - black --check blogging mysite polling  # Add this line
-  - python manage.py test
+  - black --check mysite/blogging mysite/mysite mysite/polling  # Add this line
+  - python mysite/manage.py test
