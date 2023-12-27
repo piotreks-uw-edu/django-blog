@@ -1,9 +1,11 @@
 language: python
 python:
   - "3.9"
+before_install:
+  - cd mysite
 install:
-  - pip install -r mysite/requirements.txt
-  - python mysite/manage.py migrate
+  - pip install -r requirements.txt
+  - python manage.py migrate
 script:
-  - black --check mysite/blogging mysite/mysite mysite/polling  # Add this line
-  - python mysite/manage.py test
+  - black --check blogging mysite polling
+  - python manage.py test
