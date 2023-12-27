@@ -1,0 +1,1 @@
+docker run --rm -it --name my-django --volume %cd%:/data my-django:latest bash
