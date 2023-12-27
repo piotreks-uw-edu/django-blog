@@ -2,10 +2,10 @@
 FROM python:3.10
 
 # Set the working directory
-WORKDIR /data
+WORKDIR /data/mysite
 
 # Copy only the requirements.txt file
-COPY requirements.txt .
+COPY mysite/requirements.txt .
 
 # Upgrade pip and setuptools, install requirements, and clean up in one layer
 RUN pip install --upgrade pip setuptools && \
