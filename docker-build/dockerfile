@@ -2,14 +2,13 @@
 FROM python:3.9
 
 # Set the working directory
-WORKDIR /data/mysite
+WORKDIR /data
 
 # Copy only the requirements.txt file
 COPY mysite/requirements.txt .
 
 # Upgrade pip and setuptools, install requirements, and clean up in one layer
 RUN apt-get update && \
-    apt-get install sqlite3 && \
     pip install --upgrade pip setuptools && \
     pip install --no-cache-dir -r requirements.txt && \
     rm requirements.txt
